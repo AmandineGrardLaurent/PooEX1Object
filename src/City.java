@@ -84,14 +84,15 @@ class City{
 	}
 	
 	// Méthode
-	@Override
+	
+	/*@Override
 	public String toString() {
 		return "[Ville : " + getCityName() + "]" +
 				" [Pays : " + getCityCountry() + "]" + 
 				" [Nombre d'habitants : " + getCityNbResident() + "]" + 
 				"\n-----------------------------------------------------------------------------------------";
 		
-	}
+	}*/
 	
 	// fin 1.3 ------------------------------------------------------------------
 	
@@ -106,7 +107,17 @@ class City{
 				" habitants.";
 	}
 	
-	
 	// fin 1.4 ------------------------------------------------------------------
 	
+	// 1.6 ------------------------------------------------------------------
+	// Méthode
+	@Override
+	public String toString() {
+		return "ville de " + cityName + 
+				" en " + cityCountry + 
+				" ayant " + cityNbResident + 
+				" habitants.";
+		}
+	
+	// fin 1.6 ------------------------------------------------------------------
 }

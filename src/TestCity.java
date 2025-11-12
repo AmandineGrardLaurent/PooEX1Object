@@ -34,8 +34,10 @@ public class TestCity {
 		System.out.println(rabat);
 		
 		// 1.4 --------------------------------------------------
-		System.out.println(rabat.display());
+		System.out.println(toulouse.display());
 		
+		// 1.5 ------------------------------------------------------------------
+		// si je ne précise pas toulouse.display() alors j'aurai la méthode toString qui prendra en charge l'affichage
 		
 	}
 	
