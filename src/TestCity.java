@@ -40,7 +40,8 @@ public class TestCity {
 		// si je ne précise pas toulouse.display() alors j'aurai la méthode toString qui prendra en charge l'affichage
 		
 		// 1.7 ------------------------------------------------------------------
-		System.out.printf("Nombre de villes : %s", City.cities.size());
+		//System.out.printf("Nombre de villes : %s", City.cities.size());
+		System.out.printf("Nombre de villes : %s", City.count);
 	}
 	
 }

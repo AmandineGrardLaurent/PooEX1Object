@@ -6,9 +6,10 @@ class City{
 	private String cityName;
 	private String cityCountry;
 	private int cityNbResident;
+	public static int count = 0;
 	
 	// 1.7 ------------------------------------------------------------------
-	public static ArrayList<City> cities = new ArrayList<City>();
+	//public static ArrayList<City> cities = new ArrayList<City>();
 	
 	// 1.1 ------------------------------------------------------------------
 	/*
@@ -34,8 +35,10 @@ class City{
 		setCityCountry(cityCountry);
 		setCityNbResident(cityNbResident);
 		
+		count ++;
+		
 		// 1.7 ------------------------------------------------------------------
-		cities.add(this);
+		//cities.add(this);
 	}
 
 	// Accesseurs
@@ -118,7 +121,7 @@ class City{
 	// Méthode
 	@Override
 	public String toString() {
-		return "ville de " + cityName + 
+		return "ville de "  + cityName + 
 				" en " + cityCountry + 
 				" ayant " + cityNbResident + 
 				" habitants.";
