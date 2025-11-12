@@ -5,26 +5,33 @@ public class Person {
 	private String firstName;
 	private int years;
 	private String address;
+	// 1.9 --------------------------------------------------
+	private City hometown;
+	
 	
 	// Constantes
 	public static final int YEARS = 0;
 	public static final String ADDRESS = "unknown";
+	// 1.9 --------------------------------------------------
+	public static final City HOMETOWN = new City ("unknown", "unknown", 0);
 	
 	
 	// Constructeur
-	public Person(String lastName, String firstName, int years, String address){
+	public Person(String lastName, String firstName, int years, String address, City hometown){
 		setLastName(lastName);
 		setFirstName(firstName);
 		setYears(years);
 		setAdress(address);
+		// 1.9 --------------------------------------------------
+		this.hometown = hometown;
 	}
 
 	public Person(String lastName, String firstName, int years){
-		this(lastName, firstName, years, ADDRESS);
+		this(lastName, firstName, years, ADDRESS, HOMETOWN);
 	}
 	
 	public Person(String lastName, String firstName){
-		this(lastName, firstName, YEARS, ADDRESS);
+		this(lastName, firstName, YEARS, ADDRESS, HOMETOWN);
 	}
 
 	
@@ -68,10 +75,13 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		return "[lastName=" + getLastName() + 
-				", firstName=" + getFirstName() +
-				", age=" + getYears() + 
-				", adresse=" + getAdress() + "]";
+		return "Person " + "[lastName : " + getLastName() + 
+				", firstName : " + getFirstName() +
+				", age : " + getYears() + 
+				", adresse : " + getAdress() + "]" + 
+				// 1.9 --------------------------------------------------
+				" Hometown " + ((hometown == HOMETOWN) ? " -> null" : hometown  )
+				;
 	}
 	
 }
