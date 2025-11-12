@@ -9,10 +9,8 @@ class City{
 	
 	
 	
-	
-	/*
 	// 1.1 ------------------------------------------------------------------
-	
+	/*
 	// Attributs
 	public String cityName;
 	public String cityCountry;
@@ -22,7 +20,9 @@ class City{
 		this.cityName = cityName;
 		this.cityCountry = cityCountry;
 		this.cityNbResident = cityNbResident;
-	}*/
+	}
+	*/
+	// fin 1.1 ------------------------------------------------------------------
 	
 	
 	// 1.2 ------------------------------------------------------------------
@@ -51,7 +51,7 @@ class City{
 		this.cityCountry = cityCountry;
 	}
 	
-	public int getcityNbResident() {
+	public int getCityNbResident() {
 		return this.cityNbResident;
 	}
 	
@@ -72,13 +72,26 @@ class City{
 	
 	// fin 1.2 ------------------------------------------------------------------
 	
+	
+	// 1.3 ------------------------------------------------------------------
+	
+	// Constante
+	public static String CITY_COUNTRY = "unknomn";
+	
+	// Constructeurs
+	public City(String cityName, int cityNbResident){
+		this(cityName, CITY_COUNTRY, cityNbResident);
+	}
+	
 	// Méthodes
 	public String toString() {
-		return "Nom : " + getCityName() +
-				"\nPays : " + getCityCountry() + 
-				"\nNombre d'habitants : " + getcityNbResident() + 
-				"\n------------------------------------";
+		return "[Ville : " + getCityName() + "]" +
+				" [Pays : " + getCityCountry() + "]" + 
+				" [Nombre d'habitants : " + getCityNbResident() + "]" + 
+				"\n-----------------------------------------------------------------------------------------";
 		
 	}
+	
+	// fin 1.3 ------------------------------------------------------------------
 	
 }
