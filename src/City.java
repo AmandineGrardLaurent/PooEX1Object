@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 class City{
 	
@@ -7,7 +7,8 @@ class City{
 	private String cityCountry;
 	private int cityNbResident;
 	
-	
+	// 1.7 ------------------------------------------------------------------
+	public static ArrayList<City> cities = new ArrayList<City>();
 	
 	// 1.1 ------------------------------------------------------------------
 	/*
@@ -32,6 +33,9 @@ class City{
 		setCityName(cityName);
 		setCityCountry(cityCountry);
 		setCityNbResident(cityNbResident);
+		
+		// 1.7 ------------------------------------------------------------------
+		cities.add(this);
 	}
 
 	// Accesseurs
@@ -121,4 +125,5 @@ class City{
 		}
 	
 	// fin 1.6 ------------------------------------------------------------------
+
 }

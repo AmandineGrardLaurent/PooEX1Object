@@ -34,11 +34,13 @@ public class TestCity {
 		System.out.println(rabat);
 		
 		// 1.4 --------------------------------------------------
-		System.out.println(toulouse.display());
+		//System.out.println(toulouse.display());
 		
 		// 1.5 ------------------------------------------------------------------
 		// si je ne précise pas toulouse.display() alors j'aurai la méthode toString qui prendra en charge l'affichage
 		
+		// 1.7 ------------------------------------------------------------------
+		System.out.printf("Nombre de villes : %s", City.cities.size());
 	}
 	
 }
