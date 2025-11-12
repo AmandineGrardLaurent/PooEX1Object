@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Person {
 	// Attributs
@@ -75,13 +76,44 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		return "Person " + "[lastName : " + getLastName() + 
+		/*return "Person " + "[lastName : " + getLastName() + 
 				", firstName : " + getFirstName() +
 				", age : " + getYears() + 
 				", adresse : " + getAdress() + "]" + 
 				// 1.9 --------------------------------------------------
-				" Hometown " + ((hometown == HOMETOWN) ? " -> null" : hometown  )
-				;
+				" Hometown " + ((hometown == HOMETOWN) ? " -> null" : hometown  )*/
+				
+		// 2 --------------------------------------------------
+		return lastName + ", " 
+				+ firstName + ", " 
+				+ years + "ans, " 
+				+ "habitant " + address + ", " 
+				+ ((hometown == HOMETOWN) ? "" : 
+					"Ville de naissance : " + hometown.getCityName() + ", " 
+					+ hometown.getCityCountry()
+					+ (hometown.getCityNbResident() == 0 ? "" : 
+							", population " 
+							+ hometown.getCityName() + " "
+							+ hometown.getCityNbResident() 
+							+ " d'habitants"));
 	}
 	
+	
+	// 2 --------------------------------------------------
+	public static ArrayList<Person> addFrenchPersons(ArrayList<Person> persons) {
+		ArrayList<Person> frenchPersons = new ArrayList<>();
+
+		for (Person index : persons) {
+			if (index.getAdress().contains("Paris") || index.hometown.getCityCountry().equals("France")) {
+				frenchPersons.add(index);
+			}
+		}
+		return frenchPersons;
+	}
+	
+	public static void displayPersons(ArrayList<Person> persons) {
+		for (Person index : persons) {
+			System.out.println(index);
+		}
+	}
 }

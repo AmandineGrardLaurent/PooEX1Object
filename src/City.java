@@ -84,10 +84,15 @@ class City{
 	
 	// Constante
 	public static String CITY_COUNTRY = "unknomn";
+	public static int CITY_NB_RESIDENT = 0;
 	
 	// Constructeur
 	public City(String cityName, int cityNbResident){
 		this(cityName, CITY_COUNTRY, cityNbResident);
+	}
+	
+	public City(String cityName, String cityCountry){
+		this(cityName, cityCountry, CITY_NB_RESIDENT);
 	}
 	
 	// Méthode
@@ -96,9 +101,7 @@ class City{
 	public String toString() {
 		return "[Ville : " + getCityName() +
 				", Pays : " + getCityCountry() + 
-				", Nombre d'habitants : " + getCityNbResident() + "]" + 
-				"\n-----------------------------------------------------------------------------------------";
-		
+				", Nombre d'habitants : " + getCityNbResident() + "]" ;
 	}
 	
 	// fin 1.3 ------------------------------------------------------------------
