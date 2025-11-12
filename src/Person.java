@@ -56,7 +56,6 @@ public class Person {
 		else {
 			this.years = years;
 		}
-		
 	}
 	
 	public String getAdress() {
