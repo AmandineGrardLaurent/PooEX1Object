@@ -32,5 +32,11 @@ public class TestCity {
 		System.out.println(rabat);
 		rabat.setCityCountry("Maroc");
 		System.out.println(rabat);
+		
+		// 1.4 --------------------------------------------------
+		System.out.println(rabat.display());
+		
+		
 	}
+	
 }

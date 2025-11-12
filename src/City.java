@@ -27,7 +27,7 @@ class City{
 	
 	// 1.2 ------------------------------------------------------------------
 	
-	// Constructeurs
+	// Constructeur
 	public City(String cityName, String cityCountry, int cityNbResident){
 		setCityName(cityName);
 		setCityCountry(cityCountry);
@@ -78,12 +78,13 @@ class City{
 	// Constante
 	public static String CITY_COUNTRY = "unknomn";
 	
-	// Constructeurs
+	// Constructeur
 	public City(String cityName, int cityNbResident){
 		this(cityName, CITY_COUNTRY, cityNbResident);
 	}
 	
-	// Méthodes
+	// Méthode
+	@Override
 	public String toString() {
 		return "[Ville : " + getCityName() + "]" +
 				" [Pays : " + getCityCountry() + "]" + 
@@ -93,5 +94,19 @@ class City{
 	}
 	
 	// fin 1.3 ------------------------------------------------------------------
+	
+	
+	// 1.4 ------------------------------------------------------------------
+	
+	// Méthode
+	public String display() {
+		return "ville de " + getCityName() + 
+				" en " + getCityCountry() + 
+				" ayant " + getCityNbResident() + 
+				" habitants.";
+	}
+	
+	
+	// fin 1.4 ------------------------------------------------------------------
 	
 }
