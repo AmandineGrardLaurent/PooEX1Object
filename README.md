@@ -10,15 +10,6 @@ Ce projet illustre la gestion d'objets représentant des **villes** (`City`) et 
 
 ---
 
-## 📚 Table des matières
-
-- [Description des classes](#description-des-classes)
-- [Fonctionnalités](#fonctionnalités)
-- [Exemples d'utilisation](#exemples-dutilisation)
-- [Compilation et exécution](#compilation-et-exécution)
-
----
-
 ## 🏘️ Description des classes
 
 ### City
