@@ -11,10 +11,10 @@ public class Person {
 	
 	
 	// Constantes
-	public static final int YEARS = 0;
-	public static final String ADDRESS = "unknown";
+	public static final int DEFAULT_YEARS = 0;
+	public static final String DEFAULT_ADDRESS = "unknown";
 	// 1.9 --------------------------------------------------
-	public static final City HOMETOWN = new City ("unknown", "unknown", 0);
+	public static final City DEFAULT_HOMETOWN = new City ("unknown", "unknown", 0);
 	
 	
 	// Constructeurs
@@ -28,11 +28,11 @@ public class Person {
 	}
 
 	public Person(String lastName, String firstName, int years){
-		this(lastName, firstName, years, ADDRESS, HOMETOWN);
+		this(lastName, firstName, years, DEFAULT_ADDRESS, DEFAULT_HOMETOWN);
 	}
 	
 	public Person(String lastName, String firstName){
-		this(lastName, firstName, YEARS, ADDRESS, HOMETOWN);
+		this(lastName, firstName, DEFAULT_YEARS, DEFAULT_ADDRESS, DEFAULT_HOMETOWN);
 	}
 
 	
@@ -81,19 +81,24 @@ public class Person {
 				", age : " + getYears() + 
 				", adresse : " + getAddress() + "]" + 
 				// 1.9 --------------------------------------------------
-				" Hometown " + ((hometown == HOMETOWN) ? " -> null" : hometown  )*/
+				" Hometown " + ((hometown == DEFAULT_HOMETOWN) ? " -> null" : hometown  )*/
 				
 		// 2 --------------------------------------------------
 		return lastName + ", " 
 				+ firstName + ", " 
 				+ years + "ans, " 
 				+ "habitant " + address + ", " 
-				+ ((hometown == HOMETOWN) ? "" : 
+				+ ((hometown == DEFAULT_HOMETOWN) ? "" : 
 					"Ville de naissance : " + this.hometown);
 	}
 	
 	
 	// 2 --------------------------------------------------
+	/**
+	 * Filtre pour ne garder que les personnes originaires de France ou habitant Paris
+	 * @param persons : la liste de toutes les personnes
+	 * @return : la liste filtrée
+	 */
 	public static ArrayList<Person> addFrenchPersons(ArrayList<Person> persons) {
 		ArrayList<Person> frenchPersons = new ArrayList<>();
 
@@ -105,6 +110,10 @@ public class Person {
 		return frenchPersons;
 	}
 	
+	/**
+	 * Affiche les personnes à partir d'une arraylist
+	 * @param persons : la liste de toutes les personnes
+	 */
 	public static void displayPersons(ArrayList<Person> persons) {
 		for (Person index : persons) {
 			System.out.println(index);

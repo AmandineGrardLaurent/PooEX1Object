@@ -17,7 +17,6 @@ public class TestPerson {
 		//System.out.println(biden);
 		
 		// 2 --------------------------------------------------
-		
 
 		ArrayList<Person> persons = new ArrayList<Person>();
 		ArrayList<Person> frenchPersons = new ArrayList<Person>();
@@ -36,8 +35,6 @@ public class TestPerson {
 		System.out.println("Liste des français : ");
 		frenchPersons = Person.addFrenchPersons(persons);
 		Person.displayPersons(frenchPersons);
-		
-		
-		
+
 	}
 }

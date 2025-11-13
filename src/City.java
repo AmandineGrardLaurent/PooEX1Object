@@ -85,16 +85,16 @@ class City{
 	// 1.3 ------------------------------------------------------------------
 	
 	// Constantes
-	public static String CITY_COUNTRY = "unknomn";
-	public static int CITY_NB_POPULATION = 0;
+	public static String DEFAULT_COUNTRY = "unknomn";
+	public static int DEFAULT_POPULATION = 0;
 	
 	// Constructeurs
 	public City(String cityName, int cityPopulation){
-		this(cityName, CITY_COUNTRY, cityPopulation);
+		this(cityName, DEFAULT_COUNTRY, cityPopulation);
 	}
 	
 	public City(String cityName, String cityCountry){
-		this(cityName, cityCountry, CITY_NB_POPULATION);
+		this(cityName, cityCountry, DEFAULT_POPULATION);
 	}
 	
 	// Méthode
@@ -110,6 +110,9 @@ class City{
 	// 1.4 ------------------------------------------------------------------
 	
 	// Méthode
+	/**
+	 * Méthode pour afficher les informations d'une ville sous forme d'une phrase
+	 */
 	public String display() {
 		return "ville de " + getCityName() + 
 				" en " + getCityCountry() + 
