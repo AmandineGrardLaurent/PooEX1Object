@@ -17,12 +17,12 @@ public class Person {
 	public static final City HOMETOWN = new City ("unknown", "unknown", 0);
 	
 	
-	// Constructeur
+	// Constructeurs
 	public Person(String lastName, String firstName, int years, String address, City hometown){
 		setLastName(lastName);
 		setFirstName(firstName);
 		setYears(years);
-		setAdress(address);
+		setAddress(address);
 		// 1.9 --------------------------------------------------
 		this.hometown = hometown;
 	}
@@ -66,20 +66,20 @@ public class Person {
 		}
 	}
 	
-	public String getAdress() {
+	public String getAddress() {
 		return this.address;
 	}
 	
-	public void setAdress(String address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 	
-	@Override
+
 	public String toString() {
 		/*return "Person " + "[lastName : " + getLastName() + 
 				", firstName : " + getFirstName() +
 				", age : " + getYears() + 
-				", adresse : " + getAdress() + "]" + 
+				", adresse : " + getAddress() + "]" + 
 				// 1.9 --------------------------------------------------
 				" Hometown " + ((hometown == HOMETOWN) ? " -> null" : hometown  )*/
 				
@@ -89,13 +89,7 @@ public class Person {
 				+ years + "ans, " 
 				+ "habitant " + address + ", " 
 				+ ((hometown == HOMETOWN) ? "" : 
-					"Ville de naissance : " + hometown.getCityName() + ", " 
-					+ hometown.getCityCountry()
-					+ (hometown.getCityNbResident() == 0 ? "" : 
-							", population " 
-							+ hometown.getCityName() + " "
-							+ hometown.getCityNbResident() 
-							+ " d'habitants"));
+					"Ville de naissance : " + this.hometown);
 	}
 	
 	
@@ -104,7 +98,7 @@ public class Person {
 		ArrayList<Person> frenchPersons = new ArrayList<>();
 
 		for (Person index : persons) {
-			if (index.getAdress().contains("Paris") || index.hometown.getCityCountry().equals("France")) {
+			if (index.getAddress().contains("Paris") || index.hometown.getCityCountry().equals("France")) {
 				frenchPersons.add(index);
 			}
 		}

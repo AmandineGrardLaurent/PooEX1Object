@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 class City{
 	
 	// Attributs
 	private String cityName;
 	private String cityCountry;
-	private int cityNbResident;
-	public static int count = 0;
+	private int cityPopulation;
+	public static int counterInstance = 0;
 	
 	// 1.7 ------------------------------------------------------------------
 	//public static ArrayList<City> cities = new ArrayList<City>();
@@ -16,12 +14,12 @@ class City{
 	// Attributs
 	public String cityName;
 	public String cityCountry;
-	public int cityNbResident;
+	public int cityPopulation;
 	
-	public City(String cityName, String cityCountry, int cityNbResident){
+	public City(String cityName, String cityCountry, int cityPopulation){
 		this.cityName = cityName;
 		this.cityCountry = cityCountry;
-		this.cityNbResident = cityNbResident;
+		this.cityPopulation = cityPopulation;
 	}
 	*/
 	// fin 1.1 ------------------------------------------------------------------
@@ -30,12 +28,12 @@ class City{
 	// 1.2 ------------------------------------------------------------------
 	
 	// Constructeur
-	public City(String cityName, String cityCountry, int cityNbResident){
+	public City(String cityName, String cityCountry, int cityPopulation){
 		setCityName(cityName);
 		setCityCountry(cityCountry);
-		setCityNbResident(cityNbResident);
+		setCityPopulation(cityPopulation);
 		
-		count ++;
+		counterInstance ++;
 		
 		// 1.7 ------------------------------------------------------------------
 		//cities.add(this);
@@ -58,23 +56,27 @@ class City{
 		this.cityCountry = cityCountry;
 	}
 	
-	public int getCityNbResident() {
-		return this.cityNbResident;
+	public int getCityPopulation() {
+		return this.cityPopulation;
 	}
 	
 	// Je passe en private pour que l'utilisateur ne puisse pas modifier directement la valeur
-	private void setCityNbResident(int cityNbResident) {
-		if (cityNbResident < 0) {
+	private void setCityPopulation(int cityPopulation) {
+		if (cityPopulation < 0) {
 			throw new RuntimeException("On ne peut mettre un nombre négatif d'habitants");
 		}
 		else {
-			this.cityNbResident = cityNbResident;
+			this.cityPopulation = cityPopulation;
 		}
-		
 	}
 	
-	public void setSubtractNbResidents(int nbResidents) {
-		this.cityNbResident -= nbResidents;
+	public void setSubtractPopulation(int nbPopulation) {
+		if (nbPopulation < this.cityPopulation) {
+			throw new RuntimeException("Le chiffre dépasse le nombre d'habitants de la ville.");
+		}
+		else {
+			this.cityPopulation -= nbPopulation;
+		}
 	}
 	
 	// fin 1.2 ------------------------------------------------------------------
@@ -82,26 +84,24 @@ class City{
 	
 	// 1.3 ------------------------------------------------------------------
 	
-	// Constante
+	// Constantes
 	public static String CITY_COUNTRY = "unknomn";
-	public static int CITY_NB_RESIDENT = 0;
+	public static int CITY_NB_POPULATION = 0;
 	
-	// Constructeur
-	public City(String cityName, int cityNbResident){
-		this(cityName, CITY_COUNTRY, cityNbResident);
+	// Constructeurs
+	public City(String cityName, int cityPopulation){
+		this(cityName, CITY_COUNTRY, cityPopulation);
 	}
 	
 	public City(String cityName, String cityCountry){
-		this(cityName, cityCountry, CITY_NB_RESIDENT);
+		this(cityName, cityCountry, CITY_NB_POPULATION);
 	}
 	
 	// Méthode
-	
-	@Override
 	public String toString() {
 		return "[Ville : " + getCityName() +
 				", Pays : " + getCityCountry() + 
-				", Nombre d'habitants : " + getCityNbResident() + "]" ;
+				", Nombre d'habitants : " + getCityPopulation() + "]" ;
 	}
 	
 	// fin 1.3 ------------------------------------------------------------------
@@ -113,7 +113,7 @@ class City{
 	public String display() {
 		return "ville de " + getCityName() + 
 				" en " + getCityCountry() + 
-				" ayant " + getCityNbResident() + 
+				" ayant " + getCityPopulation() + 
 				" habitants.";
 	}
 	
@@ -126,7 +126,7 @@ class City{
 	public String toString() {
 		return "ville de "  + cityName + 
 				" en " + cityCountry + 
-				" ayant " + cityNbResident + 
+				" ayant " + cityPopulation + 
 				" habitants.";
 		}
 	*/

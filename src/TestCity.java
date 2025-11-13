@@ -13,18 +13,18 @@ public class TestCity {
 		System.out.println(stGeours);
 		
 		
-		/*toulouse.cityNbResident += 2000;
-		toulouse.setCityNbResident(toulouse.cityNbResident);
+		/*toulouse.cityPopulation += 2000;
+		toulouse.setCityPopulation(toulouse.cityPopulation);
 		System.out.println(toulouse);
 		*/
 		
 		// 1.2 --------------------------------------------------
-		/*toulouse.cityNbResident = - 200;
-		toulouse.setCityNbResident(toulouse.cityNbResident);
+		/*toulouse.cityPopulation = - 200;
+		toulouse.setCityPopulation(toulouse.cityPopulation);
 		System.out.println(toulouse);
-		// je passe l'accesseur setCityNbResident en private
+		// je passe l'accesseur setCityPopulation en private
 
-		toulouse.setSubtractNbResidents(200);
+		toulouse.setSubtractPopulation(200);
 		System.out.println(toulouse);
 		 */
 		
@@ -41,7 +41,7 @@ public class TestCity {
 		
 		// 1.7 ------------------------------------------------------------------
 		//System.out.printf("Nombre de villes : %s", City.cities.size());
-		System.out.printf("Nombre de villes : %s", City.count);
+		System.out.printf("Nombre de villes : %s", City.counterInstance);
 	}
 	
 }
